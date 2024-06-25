@@ -1,0 +1,116 @@
+.contactWrapper{
+    width: 100%;
+    height: 47rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactWrapper .address{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    gap: 20px;
+}
+
+.contactWrapper .address h2{
+    color: #0693e3;
+    font-weight: 300;
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.contactWrapper .address aside p{
+    color: #333;
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+.contactWrapper .address form button{
+    width: 90%;
+    max-width: 300px;
+    align-self: flex-start;
+    padding: 10px 0;
+    border: none;
+    background: #0693e3;
+    color: #fff;
+    cursor: pointer;
+}
+
+.contactWrapper .address form button:hover{
+    border: 1px solid #0693e3;
+    border-radius: 5px;
+    background: #fff;
+    color: #0693e3;
+}
+
+.contactWrapper .address form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contactWrapper .address form > div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+}
+
+.contactWrapper .address form > div input,
+.contactWrapper .address form > div textarea{
+    padding: 10px;
+    width: 90%;
+    max-width: 300px;
+    outline-color: #0693e3;
+    border: 1px solid #333;
+    background-color: transparent;
+}
+
+.contactWrapper .address form > div label{
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+@media only screen and (max-width: 767px) {
+    /* CSS rules for mobile devices */
+    /* CSS rules for tablets */
+    .contactWrapper{
+        flex-direction: column;
+        height: 55rem;
+    }
+    
+    .contactWrapper .address form > div input,
+.contactWrapper .address form > div textarea{
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    outline-color: #0693e3;
+    border: 1px solid #333;
+    background-color: transparent;
+}
+
+.contactWrapper .address form button{
+    width: 100%;
+    max-width: 400px;
+    align-self: flex-start;
+    padding: 10px 0;
+    border: none;
+    background: #0693e3;
+    color: #fff;
+    cursor: pointer;
+}
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    /* CSS rules for tablets */
+   
+}

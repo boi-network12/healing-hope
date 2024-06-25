@@ -1,0 +1,125 @@
+.HealthD{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 5%;
+    background: #fff;
+}
+
+.HealthD > h1{
+    font-weight: 300;
+    text-transform: capitalize;
+    color: #0693e3;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.HealthD .healthBox{
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 10%;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes scaleDown {
+    0% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.scale-animation {
+    animation: scaleDown 0.5s ease-out forwards;
+}
+
+
+.HealthD .healthBox .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    width: 33%;
+    max-width: 300px;
+    height: 300px;
+    transform: scale(1.1); /* Initial scale */
+    opacity: 0; /* Initial opacity */
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.HealthD .healthBox .box.visible {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.HealthD .healthBox .box span{
+    background: #0693e3;
+    color: #f2f2f2;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.HealthD .healthBox .box h1{
+    font-weight: 300;
+    text-transform: capitalize;
+    color: #0693e3;
+    font-size: 1.7rem;
+}
+
+.HealthD .healthBox .box p{
+    font-weight: 300;
+    text-transform: capitalize;
+    color: #333;
+    font-size: 1rem;
+}
+
+.HealthD .healthBox .box a{
+    font-weight: 300;
+    text-transform: capitalize;
+    color: #333;
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 767px) {
+    /* CSS rules for mobile devices */
+    /* CSS rules for tablets */
+    .HealthD .healthBox{
+        display: flex;
+        flex-wrap: nowrap;
+        margin-top: 10%;
+        gap: 20px;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .HealthD .healthBox .box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+    }
+    
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    /* CSS rules for tablets */
+    
+   
+}

@@ -11,3 +11,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all .5s ease;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+}
+
+/* Hide the scrollbar */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+/* Optionally, hide the thumb */
+::-webkit-scrollbar-thumb {
+  display: none;
+}
+
+/* Hide the scrollbar */
+* {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Optionally, hide the thumb */
+*::-moz-scrollbar-thumb {
+  display: none;
+}

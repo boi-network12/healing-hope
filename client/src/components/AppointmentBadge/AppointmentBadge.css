@@ -1,0 +1,48 @@
+.appB{
+    background: #0693e3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.appB h1{
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.appB a{
+    background: #01a2ff;
+    border: none;
+    width: 150px;
+    height: 40px;
+    text-transform: capitalize;
+    color: #fff;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 767px) {
+    /* CSS rules for mobile devices */
+    /* CSS rules for tablets */
+    .appB h1{
+        font-size: 0.8rem;
+    }
+
+    .appB a{
+        font-size: 10px;
+        flex-wrap: nowrap;
+        width: 100px;
+        height: 30px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    /* CSS rules for tablets */
+    
+    
+}

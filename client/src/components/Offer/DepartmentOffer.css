@@ -1,0 +1,99 @@
+.docWrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.docWrapper h1{
+    color: #01a2ff;
+    text-transform: capitalize;
+    font-weight: 300;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.docWrapper .doctorBox{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.docWrapper .doctorBox .doctor{
+    width: 33%;
+    height: 350px;
+    max-width: 300px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.docWrapper .doctorBox .doctor img{
+    width: 100%;
+    height: 62%;
+    object-fit: cover;
+}
+
+.docWrapper .doctorBox .doctor h2{
+    color: #01a2ff;
+    text-transform: capitalize;
+    font-weight: 300;
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+}
+
+.docWrapper .doctorBox .doctor p{
+    color: #333;
+    text-transform: capitalize;
+    font-weight: 300;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.docWrapper .doctorBox .doctor a{
+    font-weight: 300;
+    text-transform: capitalize;
+    color: #333;
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 767px) {
+    /* CSS rules for mobile devices */
+    /* CSS rules for tablets */
+    .docWrapper .doctorBox{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10%;
+    }
+
+    .docWrapper .doctorBox .doctor{
+        width: 100%;
+        height: 350px;
+        max-width: 300px;
+        overflow: hidden;
+        border-radius: 5px;
+    }
+    
+    .docWrapper h1{
+        color: #01a2ff;
+        text-align: center;
+        font-size: 1.3rem;
+    }
+    
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    /* CSS rules for tablets */
+   
+}

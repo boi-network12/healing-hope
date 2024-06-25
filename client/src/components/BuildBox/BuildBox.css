@@ -1,0 +1,72 @@
+.boxWrapper{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+    padding: 10px;
+}
+
+.boxWrapper .box{
+    background-color: rgba(6, 147, 227, 0.8);
+    width: 33%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 300px;
+}
+
+.boxWrapper .box a button{
+    background: #0693e3;
+    border: none;
+    width: 100px;
+    height: 40px;
+    text-transform: capitalize;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.boxWrapper .box a button:hover{
+    opacity: 0.9;
+    scale: 0.8;
+}
+
+.boxWrapper .box h1{
+    font-weight: 300;
+    color: #fff;
+    font-size: 29px;
+    text-transform: capitalize;
+}
+
+.boxWrapper .box p{
+    font-weight: 300;
+    color: #fff;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+    /* CSS rules for mobile devices */
+    /* CSS rules for tablets */
+    .boxWrapper{
+        flex-direction: column;
+    }
+
+    .boxWrapper .box{
+       width: 90%;
+       max-width: 80%;
+       min-width: 90%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    /* CSS rules for tablets */
+    
+    .boxWrapper{
+        flex-direction: row;
+    }
+   
+}

@@ -1,0 +1,57 @@
+.newsCss{
+    background: #f2f2f2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    height: 20rem;
+    padding: 2%;
+}
+
+.newsCss img{
+    width: 90%;
+    height: 90%;
+}
+
+.newsCss .formSet{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.newsCss .formSet h1{
+    font-weight: 300;
+    text-transform: capitalize;
+    color: #0693e3;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.newsCss .formSet p{
+    font-weight: 300;
+    text-transform: capitalize;
+    color: #333;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.newsCss .formSet form{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+    /* CSS rules for mobile devices */
+    /* CSS rules for tablets */
+   .newsCss img{
+    display: none;
+   }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    /* CSS rules for tablets */
+   
+}

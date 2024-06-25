@@ -1,0 +1,256 @@
+.navbarWrapper{
+    width: 100%;
+    height: 145px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.navbarWrapper .warningN{
+    text-align: center;
+    padding: 15px 0;
+    background: #0693e3;
+    color: #fff;
+}
+
+.navbarWrapper .warningN p{
+    display: flex;justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.navbarWrapper .warningN p i{
+   cursor: pointer;
+   text-decoration: underline;
+   margin: 0 5px;
+}
+
+.navbarWrapper .contactN{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px ;
+    color: #333333;
+    background: #ddd;
+}
+
+.navbarWrapper .contactN p{
+    font-size: 14px;
+    cursor: pointer;
+    color: #222;
+}
+
+.navbarWrapper .navbarImage .navImg{
+    width: 120px;
+}
+
+.navbarWrapper .navbarImage{
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    flex-direction: row;
+}
+
+.navbarWrapper .navbarImage .nav{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbarWrapper .navbarImage h5{
+    background: #f2f2f2;
+    padding: 10px;
+    border-radius: 50%;
+    position: absolute;
+    left: -40px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.navbarWrapper .navbarImage .nav a{
+    text-transform: capitalize;
+}
+
+.navbarWrapper .navbarImage .nav a.nav-link{
+    font-weight: 400;
+    color: #333;
+    text-transform: capitalize;
+}
+
+.navbarWrapper .navbarImage .nav a.active{
+    color: #0693e3;
+    text-decoration: underline;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.navbarWrapper .navbarImage aside > a {
+    color: #fff;
+    background: #0693e3;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.navbarWrapper .navbarImage aside > a:hover {
+    color: #0693e3;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    border: 1px solid #0693e3;
+    scale: 0.9;
+}
+
+
+.navbarWrapper .navbarImage span{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    background: #f2f3f3;
+    padding: 5px 8px;
+    border-radius: 3px;
+}
+
+.navbarWrapper .navbarImage span img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.navbarWrapper .navbarImage p{
+    display: none;
+    cursor: pointer;
+}
+
+.navbarWrapper .navbarImage aside{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+    /* CSS rules for mobile devices */
+    /* CSS rules for tablets */
+    .navbarWrapper .navbarImage .navImg{
+        width: 100px;
+    }
+
+    .navbarWrapper .navbarImage span img{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+    }
+
+    .navbarWrapper .navbarImage span {
+        font-size: 10px;
+    }
+
+
+    .navbarWrapper .warningN p{
+        display: flex;justify-content: center;
+        align-items: center;
+        font-size: 10px;
+    }
+
+    .navbarWrapper .contactN p{
+        font-size: 10px;
+        cursor: pointer;
+        color: #222;
+    }
+
+    .navbarWrapper .navbarImage p{
+        display: block;
+    }
+
+    .navbarWrapper{
+        height: 130px;
+    }
+
+    .navbarImage .nav{
+        position: fixed;
+        right: 0;
+        top: 0;
+        background: #fff;
+        box-shadow: -1px -1px 10px 0 rgba(0, 0, 0, 0.2);
+        display: none;
+        flex-direction: column;
+        border-top-left-radius: 5px;
+        height: 100%;
+        width: 80%;
+        padding-top: 40px;
+        z-index: 998;
+    }
+    .navbarImage .nav a{
+        width: 90%;
+        margin: 0;
+        padding: 10px;
+    }
+    .navbarImage .nav a:hover{
+        border-radius: 5px;
+        background: #ccc;
+        scale: 1.1;
+    }
+
+    .navbarWrapper .navbarImage .nav.closed {
+        display: none;
+    }
+    
+    .navbarWrapper .navbarImage .nav.open {
+        display: flex;
+    }
+    
+
+
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    /* CSS rules for tablets */
+    .navbarWrapper .navbarImage p{
+        display: block;
+    }
+
+    .navbarImage .nav{
+        position: fixed;
+        right: 0;
+        top: 0;
+        background: #fff;
+        box-shadow: -1px -1px 10px 0 rgba(0, 0, 0, 0.2);
+        display: none;
+        flex-direction: column;
+        border-top-left-radius: 5px;
+        height: 100%;
+        width: 40%;
+        padding-top: 40px;
+        z-index: 998;
+    }
+    .navbarImage .nav a{
+        width: 90%;
+        margin: 0;
+        padding: 10px;
+    }
+    .navbarImage .nav a:hover{
+        border-radius: 5px;
+        background: #ccc;
+        scale: 1.1;
+    }
+
+    .navbarWrapper .navbarImage .nav.closed {
+        display: none;
+    }
+    
+    .navbarWrapper .navbarImage .nav.open {
+        display: flex;
+    }
+    
+   
+}
+

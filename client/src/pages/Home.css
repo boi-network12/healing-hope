@@ -1,0 +1,30 @@
+.HomeWrapper{
+    width: 100%;
+    position: relative;
+}
+
+.HomeWrapper .BuildBox{
+    position: absolute;
+    top: 400px;
+    z-index: 2;
+    width: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+    /* CSS rules for mobile devices */
+    /* CSS rules for tablets */
+    .HomeWrapper .BuildBox{
+        position: static;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    /* CSS rules for tablets */
+    
+    .HomeWrapper .BuildBox{
+        position: absolute;
+        top: 300px;
+        z-index: 2;
+        width: 100%;
+    }
+}
