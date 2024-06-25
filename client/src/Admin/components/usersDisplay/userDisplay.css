@@ -1,0 +1,71 @@
+.userWrapper {
+    width: 100%;
+    margin-top: 30px;
+    background: #fff;
+    height: 30rem;
+    background: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow-x: auto; /* Enable horizontal scrolling on small screens */
+}
+
+.userWrapper h1 {
+    color: #0693e3;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 1.3rem;
+    text-align: left;
+    width: 100%;
+    padding: 20px;
+}
+
+.userWrapper .userTable {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    background: #fff;
+    padding: 10px;
+    overflow-x: scroll;
+    width: 95%;
+    overflow-x: auto; /* Enable horizontal scrolling on small screens */
+}
+
+.userWrapper .userTable table {
+    width: 100%;
+    border-collapse: collapse; /* Ensure cells are spaced correctly */
+}
+
+.userWrapper .userTable thead {
+    width: 100%;
+}
+
+.userWrapper .userTable th,
+.userWrapper .userTable td {
+    padding: 8px; /* Adjust spacing */
+    text-align: left;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.userWrapper .userTable tr {
+    width: 100%;
+}
+
+.userWrapper .userTable tr img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Media Queries for Responsive Design */
+
+@media screen and (max-width: 768px) {
+    .userWrapper .userTable {
+        width: 100%;
+        overflow-x: auto; /* Enable horizontal scrolling */
+    }
+    
+    .userWrapper .userTable th,
+    .userWrapper .userTable td {
+        padding: 6px; /* Adjust spacing for smaller screens */
+    }
+}

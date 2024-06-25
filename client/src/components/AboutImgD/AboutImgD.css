@@ -1,7 +1,7 @@
 .AboutImgD{
     display: flex;
     flex-direction: row;
-    height: 26rem;
+    height: 40rem;
     width: 100%;
     gap: 20px;
     padding: 3%;
@@ -10,6 +10,7 @@
 
 .AboutImgD img{
     width: 100%;
+    max-width: 550px;
     height: 100%;
     object-fit: cover;
 }
@@ -48,5 +49,14 @@
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     /* CSS rules for tablets */
     
-   
+    .AboutImgD{
+        display: flex;
+        flex-direction: row;
+        height: 26rem;
+        width: 100%;
+        gap: 20px;
+        padding: 3%;
+        align-items: center;
+    }
+    
 }

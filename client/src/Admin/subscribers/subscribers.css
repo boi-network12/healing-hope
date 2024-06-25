@@ -1,0 +1,60 @@
+.subscribers {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .subscriber-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .subscriber-item button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .subscriber-item button:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 768px) {
+    .subscriber-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .subscriber-item button {
+      margin-top: 10px;
+      align-self: flex-end;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .subscribers {
+      padding: 10px;
+    }
+  
+    .subscriber-item {
+      padding: 10px;
+    }
+  
+    h1 {
+      font-size: 1.5em;
+    }
+  }
+  

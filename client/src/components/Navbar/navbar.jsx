@@ -47,7 +47,25 @@ const Navbar = () => {
                 <Link to="/department" className={window.location.pathname === "/department" ? "active" : "nav-link"}>Department</Link>
                 <Link to="/contact-us" className={window.location.pathname === "/contact-us" ? "active" : "nav-link"}>Contact Us</Link>
                 {currentUser && currentUser.role === 'admin' ? (
-                    <Link to={`/admin-dashboard-${currentUser.userId}`} className={window.location.pathname === "/admin-dashboard" ? "active" : "nav-link"}>Admin-dashboard</Link>
+                    <Link to={`/admin-dashboard/${currentUser.uid}`} className={window.location.pathname === `/admin-dashboard/${currentUser.uid}` ? "active" : "nav-link"}>Admin-dashboard</Link>
+                ) : (
+                    null
+                )}
+
+                {currentUser && currentUser.role === 'admin' ? (
+                    <Link to={`/subscribers/${currentUser.uid}`} className={window.location.pathname === `/subscribers/${currentUser.uid}` ? "active" : "nav-link"}>Subscribers</Link>
+                ) : (
+                    null
+                )}
+                
+                {currentUser && currentUser.role === 'admin' ? (
+                    <Link to={`/contact-us-reply/${currentUser.uid}`} className={window.location.pathname === `/contact-us-reply/${currentUser.uid}` ? "active" : "nav-link"}>contact Us Reply</Link>
+                ) : (
+                    null
+                )}
+
+                {currentUser && currentUser.role === 'admin' ? (
+                    <Link to={`/health-declaration-review/${currentUser.uid}`} className={window.location.pathname === `/health-declaration-review/${currentUser.uid}` ? "active" : "nav-link"}>Health Declaration Review</Link>
                 ) : (
                     null
                 )}

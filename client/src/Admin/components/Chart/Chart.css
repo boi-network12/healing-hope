@@ -1,0 +1,35 @@
+.chartWrapper{
+        background: #fff;
+        margin-top: 10px;
+        width: 600px;
+        padding: 10px;
+}
+
+.chartWrapper h2{
+        color: #0693e3;
+        text-transform: capitalize;
+        font-weight: 400;
+        font-size: 1.5rem;
+        text-align: left;
+        padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .chartWrapper{
+        background: #fff;
+        margin-top: 10px;
+        width: 100%;
+        padding: 10px;
+        
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .chartWrapper{
+        background: #fff;
+        margin-top: 10px;
+        width: 100%;
+        padding: 10px;
+    }
+  }
+  

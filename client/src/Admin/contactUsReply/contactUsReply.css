@@ -1,0 +1,42 @@
+.CUWrapper{
+    width: 100%;
+    background: #f2f2f2;
+}
+
+.CUWrapper .Contact-info{
+    margin-top: 20px;
+    background: #fff;
+    width: 100%;
+    padding: 20px;
+    overflow-x: scroll;
+    gap: 10px;
+}
+
+.CUWrapper .Contact-info .contact-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: #f2f2f2;
+    margin-bottom: 10px;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+.CUWrapper .Contact-info .contact-item p,
+.CUWrapper .Contact-info .contact-item strong,
+.CUWrapper .Contact-info .contact-item i{
+    width: 30%;
+    font-size: 0.9rem;
+    color: #333;
+    max-width: 250px;
+    min-width: 50px;
+    padding: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    align-items: center;
+}
+.clipboard{
+    cursor: pointer;
+}
