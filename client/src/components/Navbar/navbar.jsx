@@ -89,6 +89,13 @@ const Navbar = () => {
                 )}
 
                 
+                {currentUser && currentUser.role === 'admin' ? (
+                    <Link to={`/article/${currentUser.uid}`} className={window.location.pathname === `/article/${currentUser.uid}` ? "active" : "nav-link"}>Article</Link>
+                ) : (
+                    null
+                )}
+
+                
             </div>
            <aside>
            {currentUser ? (

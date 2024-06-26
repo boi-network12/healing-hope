@@ -17,6 +17,7 @@ import Profile from './pages/profile/profile';
 import Career from './pages/Job/Career';
 import PostCareer from './pages/post/PostCareer';
 import ApplicationReview from './Admin/ApplicationReview/ApplicationReview';
+import Article from './Admin/Article/Article';
 
 
 
@@ -75,6 +76,11 @@ function App() {
                 <Route path={`/application-review/${currentUser.uid}`} element={
                   <PrivateRoute>
                     <ApplicationReview/>
+                  </PrivateRoute>
+                }/>
+                <Route path={`/article/${currentUser.uid}`} element={
+                  <PrivateRoute>
+                    <Article/>
                   </PrivateRoute>
                 }/>
               </>

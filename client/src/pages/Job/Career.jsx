@@ -8,6 +8,7 @@ import { Fade } from 'react-awesome-reveal';
 import { useAlert } from '../../context/AlertContext';
 import { useForm, Controller } from "react-hook-form";
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import { useAuth } from '../../context/authContaxt';
 
 const theme = createTheme();
 
@@ -17,6 +18,7 @@ const Career = () => {
   const [selectedPost, setSelectedPost] = useState(null);
   const sendAlert = useAlert();
   const { control, handleSubmit, reset } = useForm();
+  const { currentUser } = useAuth();
 
   useEffect(() => {
     const fetchJobPosts = async () => {
@@ -43,12 +45,11 @@ const Career = () => {
     try {
       let cvUrl = '';
   
-      if (data.cv[0]) {
+      if (data.cv && data.cv[0]) {
         const cvFile = data.cv[0];
         const cvRef = ref(storage, `cvs/${cvFile.name}`);
-        console.log("Uploading file to:", cvRef.fullPath);
         await uploadBytes(cvRef, cvFile);
-        console.log("File uploaded successfully.");
+        sendAlert("success", "Upload successfully!");
         cvUrl = await getDownloadURL(cvRef);
         console.log("File URL:", cvUrl);
       }
@@ -56,9 +57,15 @@ const Career = () => {
       const applicationData = {
         name: data.name,
         email: data.email,
+        postName: selectedPost.postName,
         cvUrl,
         postId: selectedPost.id,
+        username: currentUser.username,
+        userEmail: currentUser.email,
+        uid: currentUser.uid,
       };
+  
+      console.log("Application Data: ", applicationData);
   
       await addDoc(collection(db, 'applications'), applicationData);
       sendAlert("success", "Application submitted successfully!");
@@ -67,7 +74,8 @@ const Career = () => {
       console.error("Error adding document: ", error.message, error.code, error);
       sendAlert("error", `Failed to submit application: ${error.message}`);
     }
-  }
+  };
+  
   
   
 

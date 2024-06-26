@@ -59,15 +59,16 @@
     display: flex;
     align-items: center;
     gap: 25px;
+    overflow-y: scroll;
 }
 
 .navbarWrapper .navbarImage h5{
     background: #f2f2f2;
     padding: 10px;
     border-radius: 50%;
-    position: absolute;
-    left: -40px;
-    top: 10px;
+    position: fixed;
+    right: 30px;
+    top: 50px;
     cursor: pointer;
 }
 
