@@ -7,7 +7,10 @@ import {
     GoogleAuthProvider,
     signInWithPopup,
     setPersistence,
-    browserSessionPersistence
+    browserSessionPersistence,
+    EmailAuthProvider,
+    reauthenticateWithCredential,
+    updatePassword
 } from "firebase/auth";
 import { doc, setDoc, getDoc, collection, getDocs } from "firebase/firestore";
 import { auth, db } from "../FirebaseConfig";
@@ -17,6 +20,26 @@ const AuthContext = createContext();
 export const useAuth = () => {
     return useContext(AuthContext);
 };
+
+export const changePassword = async (oldPassword, newPassword) => {
+    const currentUser = auth.currentUser;
+    if (!currentUser) {
+        throw new Error("No user is currently logged in!");
+    }
+
+    const credential = EmailAuthProvider.credential(
+        currentUser.email,
+        oldPassword
+    );
+
+    await reauthenticateWithCredential(currentUser, credential);
+    await updatePassword(currentUser, newPassword);
+};
+
+export const sendPasswordResetEmail = async (email) => {
+    await sendPasswordResetEmail(auth, email);
+}
+
 
 export const AuthProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState(null);
@@ -121,7 +144,9 @@ export const AuthProvider = ({ children }) => {
         register,
         login,
         googleSignUp,
-        logout
+        logout,
+        changePassword,
+        sendPasswordResetEmail,
     };
 
     return (

@@ -6,7 +6,11 @@ import './userProfileModal.css';
 import { useAuth } from '../context/authContaxt';
 
 const UserProfileModal = ({ onClose }) => {
-    const { logout } = useAuth();
+    const { logout, currentUser } = useAuth();
+    
+    if (!currentUser) {
+        return null; // Or handle the case where currentUser is not defined
+    }
     return (
         <div className="modalBackdrop" onClick={onClose}>
             <div className="modalContent" onClick={(e) => e.stopPropagation()}>
@@ -14,7 +18,7 @@ const UserProfileModal = ({ onClose }) => {
                     
                 </div>
                 <div className="modalBody">
-                    <Link to="/profile" className="modalItem">
+                    <Link to={`/profile/${currentUser.uid}`} className="modalItem">
                         <FaUserCircle /> Profile
                     </Link>
                     <Link to="/" onClick={logout} className="modalItem logout">

@@ -13,6 +13,10 @@ import { useAuth } from './context/authContaxt';
 import Subscribers from './Admin/subscribers/subscribers';
 import ContactUsReply from './Admin/contactUsReply/contactUsReply';
 import HealthDeclarationReview from './Admin/HealthDeclarationReview/HealthDeclarationReview';
+import Profile from './pages/profile/profile';
+import Career from './pages/Job/Career';
+import PostCareer from './pages/post/PostCareer';
+import ApplicationReview from './Admin/ApplicationReview/ApplicationReview';
 
 
 
@@ -51,6 +55,26 @@ function App() {
                 <Route path={`/health-declaration-review/${currentUser.uid}`} element={
                   <PrivateRoute>
                     <HealthDeclarationReview/>
+                  </PrivateRoute>
+                }/>
+                <Route path={`/profile/${currentUser.uid}`} element={
+                  <PrivateRoute>
+                    <Profile/>
+                  </PrivateRoute>
+                }/>
+                <Route path={`/career/${currentUser.uid}`} element={
+                  <PrivateRoute>
+                    <Career/>
+                  </PrivateRoute>
+                }/>
+                <Route path={`/post-career/${currentUser.uid}`} element={
+                  <PrivateRoute>
+                    <PostCareer/>
+                  </PrivateRoute>
+                }/>
+                <Route path={`/application-review/${currentUser.uid}`} element={
+                  <PrivateRoute>
+                    <ApplicationReview/>
                   </PrivateRoute>
                 }/>
               </>

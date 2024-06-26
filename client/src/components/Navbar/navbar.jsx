@@ -39,7 +39,7 @@ const Navbar = () => {
             <p><FaPhone color='#0693e3'/> 469-225-3670</p>
         </div>
         <div className='navbarImage' >
-            <img className='navImg' src={require("../../assets/main-logo.png")} alt="" />
+            <Link to="/"><img className='navImg' src={require("../../assets/main-logo.png")} alt="" /></Link>
             <div className={`nav ${navOpen ? 'open' : 'closed'}`}>
                 <h5 onClick={toggleNav}><FaTimes/></h5>
                 <Link to="/" className={window.location.pathname === "/" ? "active" : "nav-link"}>Home</Link>
@@ -69,6 +69,25 @@ const Navbar = () => {
                 ) : (
                     null
                 )}
+                
+                {currentUser && currentUser.role === 'user' ? (
+                    <Link to={`/career/${currentUser.uid}`} className={window.location.pathname === `/career/${currentUser.uid}` ? "active" : "nav-link"}>Admit Career</Link>
+                ) : (
+                    null
+                )}
+                {currentUser && currentUser.role === 'admin' ? (
+                    <Link to={`/post-career/${currentUser.uid}`} className={window.location.pathname === `/post-career/${currentUser.uid}` ? "active" : "nav-link"}>Post Career</Link>
+                ) : (
+                    null
+                )}
+
+                
+                {currentUser && currentUser.role === 'admin' ? (
+                    <Link to={`/application-review/${currentUser.uid}`} className={window.location.pathname === `/application-review/${currentUser.uid}` ? "active" : "nav-link"}>Application Review</Link>
+                ) : (
+                    null
+                )}
+
                 
             </div>
            <aside>
