@@ -18,6 +18,8 @@ import Career from './pages/Job/Career';
 import PostCareer from './pages/post/PostCareer';
 import ApplicationReview from './Admin/ApplicationReview/ApplicationReview';
 import Article from './Admin/Article/Article';
+import News from './pages/News/News';
+import ArticleDetails from './pages/ArticleDetails/ArticleDetails';
 
 
 
@@ -35,6 +37,7 @@ function App() {
           <Route path='/contact-us' element={<Contact/>}/>
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>
+          <Route path='/article-display/:id' element={<ArticleDetails/>}/>
           <>
             {currentUser && (
               <>
@@ -81,6 +84,11 @@ function App() {
                 <Route path={`/article/${currentUser.uid}`} element={
                   <PrivateRoute>
                     <Article/>
+                  </PrivateRoute>
+                }/>
+                <Route path={`/news/${currentUser.uid}`} element={
+                  <PrivateRoute>
+                    <News/>
                   </PrivateRoute>
                 }/>
               </>

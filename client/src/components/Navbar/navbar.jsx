@@ -96,6 +96,20 @@ const Navbar = () => {
                 )}
 
                 
+                {currentUser && currentUser.role === 'user' ? (
+                    <Link to={`/news/${currentUser.uid}`} className={window.location.pathname === `/news/${currentUser.uid}` ? "active" : "nav-link"}>News</Link>
+                ) : (
+                    null
+                )}
+
+                
+                {currentUser && currentUser.role === 'admin' ? (
+                    <Link to={`/news/${currentUser.uid}`} className={window.location.pathname === `/news/${currentUser.uid}` ? "active" : "nav-link"}>News</Link>
+                ) : (
+                    null
+                )}
+
+                
             </div>
            <aside>
            {currentUser ? (

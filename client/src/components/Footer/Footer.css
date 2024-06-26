@@ -1,62 +1,98 @@
 .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #0693e3;
-    color: white;
-    padding: 20px;
-    font-size: 14px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0693e3;
+  color: white;
+  padding: 20px;
+  font-size: 14px;
+  flex-wrap: wrap;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.footer:hover {
+  background-color: #007bb5;
+}
+
+.footer-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo {
+  cursor: pointer;
+  margin-right: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.footer-location {
+  display: flex;
+  align-items: center;
+}
+
+.location-icon {
+  margin-right: 8px;
+  animation: bounce 1s infinite;
+}
+
+.footer-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-social {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px; /* Adjust spacing as needed */
+}
+
+.social-icon {
+  font-size: 24px;
+  margin-right: 10px;
+  color: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
   }
-  
-  .footer-left {
-    flex: 1;
-    display: flex;
-    align-items: center;
+
+  .footer-left, .footer-right {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
   }
-  
-  .footer-location {
-    display: flex;
-    align-items: center;
-  }
-  
-  .location-icon {
-    margin-right: 8px;
-  }
-  
-  .footer-right {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-  }
-  
+
   .footer-social {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 10px; /* Adjust spacing as needed */
+    justify-content: center;
   }
-  
-  .social-icon {
-    font-size: 24px;
-    margin-right: 10px;
-    color: white;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .footer {
-      flex-direction: column;
-    }
-  
-    .footer-left, .footer-right {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 10px;
-    }
-  
-    .footer-social {
-      justify-content: center;
-    }
-  }
-  
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.logo {
+  width: 180px; /* Adjust size as needed */
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+  transform: rotate(360deg);
+}

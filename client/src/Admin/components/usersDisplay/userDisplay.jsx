@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import { Timestamp } from 'firebase/firestore';
+import { FaEllipsisH } from 'react-icons/fa';
+import { doc, updateDoc } from 'firebase/firestore';
 import "./userDisplay.css";
+import { db } from '../../../FirebaseConfig';
+import { useAlert } from '../../../context/AlertContext';
 
 const UserDisplay = ({ users }) => {
   const [showAllUsers, setShowAllUsers] = useState(false);
+  const [selectedUser, setSelectedUser] = useState(null);
+  const sendAlert = useAlert();
+
   const initialDisplayCount = 4; // Number of users to display initially
 
   // Function to format Firestore timestamp
@@ -15,6 +22,20 @@ const UserDisplay = ({ users }) => {
   // Function to toggle showing all users
   const toggleShowAllUsers = () => {
     setShowAllUsers(prev => !prev);
+  };
+
+  // Function to handle role change
+  const handleRoleChange = async (user, newRole) => {
+    try {
+      const userRef = doc(db, 'users', user.id);
+      await updateDoc(userRef, { role: newRole });
+      sendAlert("success", `Role of ${user.fullName} changed to ${newRole}`);
+    } catch (error) {
+      console.error("Error updating user role: ", error);
+      sendAlert("error", "Failed to change role")
+    } finally {
+      setSelectedUser(null);
+    }
   };
 
   return (
@@ -33,6 +54,7 @@ const UserDisplay = ({ users }) => {
               <th>Username</th>
               <th>Reg No</th>
               <th>Time</th>
+              <th>Change Role</th>
             </tr>
           </thead>
           <tbody>
@@ -47,6 +69,16 @@ const UserDisplay = ({ users }) => {
                 <td>{user.username}</td>
                 <td>{user.regNo || user.hospitalId}</td>
                 <td>{formatTimestamp(user.createdAt)}</td>
+                <td>
+                <FaEllipsisH onClick={() => setSelectedUser(user.id === selectedUser ? null : user.id)} />
+                  {selectedUser === user.id && (
+                    <div className="dropdown">
+                      <button onClick={() => handleRoleChange(user, 'admin')}>Admin</button>
+                      <button onClick={() => handleRoleChange(user, 'user')}>User</button>
+                      <button onClick={() => handleRoleChange(user, 'moderator')}>Moderator</button>
+                    </div>
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>

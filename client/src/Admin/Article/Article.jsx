@@ -5,14 +5,7 @@ import { storage, db } from '../../FirebaseConfig';
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { setDoc, doc, collection } from "firebase/firestore";
 import Navbar from '../../components/Navbar/navbar';
-import { 
-  Container, 
-  TextField, 
-  Button, 
-  CircularProgress, 
-  Typography, 
-  Box 
-} from '@mui/material';
+import { Container, TextField, Button, CircularProgress, Typography, Box } from '@mui/material';
 
 const Article = () => {
     const { currentUser } = useAuth();
@@ -43,6 +36,7 @@ const Article = () => {
 
             const articleRef = doc(collection(db, 'articles'));
             await setDoc(articleRef, {
+                id: articleRef.id, // Include document ID
                 title,
                 description,
                 imageURL,
@@ -50,6 +44,7 @@ const Article = () => {
                     uid: currentUser.uid,
                     email: currentUser.email,
                     displayName: currentUser.displayName,
+                    userProfilePicture: currentUser.photoURL,
                 },
                 createdAt: new Date().toISOString()
             });

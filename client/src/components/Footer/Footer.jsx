@@ -9,6 +9,9 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-left">
+        <div className="footer-logo" onClick={() => window.location.href = "/"}>
+          <img src={require("../../assets/main-logo.png")} alt="Site Logo" className="logo" />
+        </div>
         <div className="footer-location">
           <FaMapMarkerAlt className="location-icon" />
           <p>733 Highway 287 N, Suite 403 Mansfield, Tx 76063-3867</p>

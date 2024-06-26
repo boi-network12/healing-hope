@@ -46,6 +46,34 @@
     white-space: nowrap; /* Prevent text wrapping */
 }
 
+.userWrapper .dropdown {
+    position: static;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 6;
+    border-radius: 4px;
+    padding: 5px 0;
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .userWrapper .dropdown button {
+    width: 100%;
+    padding: 8px 16px;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none; /* Ensure no default outline on focus */
+  }
+  
+  .userWrapper .dropdown button:hover {
+    background-color: #f2f2f2;
+  }
+  
+
 .userWrapper .userTable tr {
     width: 100%;
 }
