@@ -62,7 +62,7 @@
     overflow-y: scroll;
 }
 
-.navbarWrapper .navbarImage h5{
+.navbarWrapper .navbarImage .nav h5{
     background: #f2f2f2;
     padding: 10px;
     border-radius: 50%;
@@ -70,6 +70,7 @@
     right: 30px;
     top: 50px;
     cursor: pointer;
+    display: none;
 }
 
 .navbarWrapper .navbarImage .nav a{
@@ -144,6 +145,10 @@
         width: 100px;
     }
 
+    .navbarWrapper .navbarImage .nav h5{
+        display: block;
+    }
+
     .navbarWrapper .navbarImage span img{
         width: 20px;
         height: 20px;
@@ -216,6 +221,10 @@
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     /* CSS rules for tablets */
     .navbarWrapper .navbarImage p{
+        display: block;
+    }
+
+    .navbarWrapper .navbarImage .nav h5{
         display: block;
     }
 
